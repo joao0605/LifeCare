@@ -8,7 +8,6 @@ import React from 'react';
 
 
 import Logo from '../components/logoTitle/logoSecundario'
-import Title from '../components/logoTitle/title'
 import LoginCard from "@/components/loginCard/loginCard"
 import Input from '@/components/input/input'
 import Button from '@/components/buttons/button'
@@ -35,12 +34,16 @@ export default function LoginPage() {
             const corpo = await res.json()
             localStorage.setItem("token", corpo.token)
             localStorage.setItem("userType", corpo.userType)
-            
+            let userType = corpo.userType
 
-               router.push("/")
+            if(userType  === "adm"){
 
-           
-
+                router.push("/adm")
+    
+            } else if( userType === "seller"){
+    
+                router.push("/seller")
+            }
         } else {
             
             setError("Usuário ou senha incorretos")
