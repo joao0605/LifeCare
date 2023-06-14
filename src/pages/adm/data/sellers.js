@@ -1,17 +1,12 @@
-import List from "@/components/list/list"
-import styles from '../../components/list/list.module.css'
+
 import { useRouter } from "next/router"
-
-import { ItemForm } from "@/components/list/itens"
 import { useState, useEffect } from "react"
-import Navbar from "@/components/navbar/Navbar"
-import ClientList from "@/components/sellerList/SellerList"
+import SellerList from "@/components/sellerList/SellerList"
 
 
 
-export default function Home(){
+export default function Sellers(){
     const [sellers, setSellers] = useState(null)
-    const router = useRouter()
 
     useEffect(() => {
       async function fetchData() {
@@ -31,10 +26,6 @@ export default function Home(){
   
       fetchData()
     }, [])
-
-    const handleSellersPage = () => {
-      router.push("/adm/data/sellers")
-    }
   
 
     
@@ -43,8 +34,9 @@ export default function Home(){
     return (
         <div>
            
-      <p>Página inicial adm</p>
-      <div onClick={handleSellersPage}>Página dos sellers</div>
+           
+    <SellerList sellers={sellers}/>
+
         </div>
     )
 }
