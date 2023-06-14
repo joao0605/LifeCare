@@ -1,0 +1,21 @@
+.background {
+    background-color: #175861;
+    min-height: 100vh;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+.form {
+  
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}

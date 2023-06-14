@@ -1,0 +1,96 @@
+.iconDailyReport {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 100%;
+   width: 150px;
+   height: 150px;
+   background-color: #FA6A9E;
+
+   transform: translate(50%, 100%);
+}
+.imgReport{
+   width: 80px;
+   height: 80px;
+}
+
+.iconPersonalData {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 100%;
+   width: 150px;
+   height: 150px;
+   background-color: #F9E63F;
+
+   transform: translate(30%, 100%);
+}
+.imgProfile{
+   width: 80px;
+   height: 80px;
+}
+
+.iconChat {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 100%;
+   width: 150px;
+   height: 150px;
+   background-color: #56E787;
+
+   transform: translate(30%, 150%);
+}
+.imgChat{
+   width: 75px;
+   height: 75px;
+}
+
+.iconclasse {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 100%;
+   width: 150px;
+   height: 150px;
+   background-color: #CF81CF;
+
+   transform: translate(50%, 150%);
+}
+.imgClasse{
+   width: 80px;
+   height: 80px;
+}
+
+.iconrecord {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 100%;
+   width: 150px;
+   height: 150px;
+   background-color: #CF81CF;
+
+   transform: translate(50%, 150%);
+}
+.imgRecord{
+   width: 80px;
+   height: 80px;
+}
+
+.slider {
+
+   display: flex;
+   flex-direction: row;
+}
+
+.logosecundario {
+
+   max-width: 240px;
+  left: -4px;
+   top: 676px;
+
+   transform: translate(-1%, 160%);
+
+}
+

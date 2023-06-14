@@ -1,0 +1,78 @@
+ .studentAll{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+} 
+
+
+.studentInfo, .responsibleInfo, .observacoesInfo{
+    transform: translate(-1.5%,0%);
+}
+
+.studentInfo {
+    margin-top: 60px;
+    padding-left: 10px;
+    
+    min-width: 90%;
+    max-width: 90%;
+    
+    min-height: 200px;
+    max-height: 200px;
+
+    border-radius: 5%;
+    
+    justify-content: center;
+    background-color: rgba(79, 168, 218, 0.20);  
+}
+
+
+.responsibleInfo {
+    margin-top: 20px;
+    padding-left: 10px;
+
+    min-width: 90%;
+    max-width: 90%;
+    
+    min-height: 200px;
+    max-height: 200px;
+
+    border-radius: 5%;
+
+    background-color: rgba(31, 217, 228, 0.20);  
+}
+
+
+.observacoesInfo {
+    margin-top: 20px;
+    padding-left: 10px;
+    
+    
+    min-width: 90%;
+    max-width: 90%;
+    
+    min-height: 200px;
+    max-height: 200px;
+
+    border-radius: 5%;
+
+    background-color: rgba(79, 168, 218, 0.20);  
+}
+
+/*PARA O TEXTO*/
+
+.title{
+    font-size: 1.3em;
+    font-weight: 900;
+    font-family: 'Roboto Mono'; 
+}
+
+.stText{
+    padding-top: 7px;
+    font-size: medium;
+    font-family: 'Roboto Mono';
+}
+.text{
+    padding-top: 3px;
+    font-size: medium;
+    font-family: 'Roboto Mono';
+}
