@@ -14,9 +14,20 @@ async function getSellers(req, res) {
         res.status(500).json({ error: error.message })
     }
 }
+async function getAdmData(req, res) {
+    try {
+
+        const id = req.query.id
+        const collection = await getMongoCollection(collectionName)
+        const adm = await collection.findById({ _id: new ObjectId(id) }).exec();
+        return res.status(200).json(adm);
+    } catch (error) {
+        res.status(500).json({ error: error.message })
+    }
+}
 
 
 
 
 
-export { getSellers }
+export { getSellers, getAdmData }
