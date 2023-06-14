@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import styles from "./SellerList.module.css";
+import { useRouter } from 'next/router';
+import {BiArrowBack}  from 'react-icons/bi';
 
 const SellerList = (props) => {
   const [selectedSeller, setSelectedSeller] = useState(null);
 
   const [sales, setSales] = useState(0)
   const [calls, setCalls] = useState(0)
+
+  const router = useRouter()
 
  
   const handleSellerClick = (sellerId) => {
@@ -46,9 +50,14 @@ const SellerList = (props) => {
     
   };
 
+  const handleVoltar = () =>{
+    router.push("/adm/")
+  }
+
   return (
    <div className={styles["seller-container"]}>
       <div className={styles["seller-list"]}>
+        <BiArrowBack onClick={handleVoltar}/>
         <h2>Seller List</h2>
         <ul>
           {props.sellers && props.sellers.map((seller) => (

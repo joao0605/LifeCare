@@ -35,6 +35,9 @@ export default function Home(){
     const handleSellersPage = () => {
       router.push("/adm/data/sellers")
     }
+    const handleClientsPage = () => {
+      router.push("/adm/data/clients")
+    }
   
 
     
@@ -45,6 +48,7 @@ export default function Home(){
            
       <p>Página inicial adm</p>
       <div onClick={handleSellersPage}>Página dos sellers</div>
+      <div onClick={handleClientsPage}>Página dos clients</div>
         </div>
     )
 }
