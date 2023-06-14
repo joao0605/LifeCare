@@ -1,7 +1,7 @@
 const { MongoClient } = require('mongodb')
 
 
-const URL = "mongodb+srv://quaresmaamanda4:3EYWFQMF2cnBKSmC@mandy.fhynimk.mongodb.net/" ?? "mongodb://127.0.0.1:27017"
+const URL = "mongodb+srv://quaresmaamanda4:5WUNXnIPT1FPv5MN@mandy.fhynimk.mongodb.net/" ?? "mongodb://127.0.0.1:27017"
 const DB_NAME = "lifecare"
 
 let client

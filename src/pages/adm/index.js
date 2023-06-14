@@ -15,7 +15,7 @@ export default function Home(){
       async function fetchData() {
   
         const res = await fetch(
-          `/api/adm/sellers`,
+          `/api/adm/seller`,
           { method: "GET" }
         );
         if (res.status != 200) {
@@ -30,6 +30,21 @@ export default function Home(){
       fetchData()
     }, [])
   
+
+    const sellersTest = [
+        {name: "joao",
+        registration: "1"
+    
+    },
+        {name: "joao",
+        registration: "1"
+    
+    },
+        {name: "joao",
+        registration: "1"
+    
+    },
+    ]
 
  
     return (
