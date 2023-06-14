@@ -1,26 +1,26 @@
 
 import { useRouter } from "next/router"
 import { useState, useEffect } from "react"
-import SellerList from "@/components/sellerList/SellerList"
+import ClientList from "@/components/clientList/clientList"
 
 
 
-export default function Sellers(){
-    const [sellers, setSellers] = useState(null)
+export default function Clients(){
+    const [clients, setClients] = useState(null)
 
     useEffect(() => {
       async function fetchData() {
   
         const res = await fetch(
-          `/api/adm/seller`,
+          `/api/adm/client`,
           { method: "GET" }
         );
         if (res.status != 200) {
-          console.log("Vendedores não disponíveis");
+          console.log("clientes não disponíveis");
         } else {
           const data = await res.json();
           console.log("esse eh o de dados", data);
-          setSellers(data);
+          setClients(data);
         }
       }
   
@@ -35,7 +35,7 @@ export default function Sellers(){
         <div>
            
            
-    <SellerList sellers={sellers}/>
+    <ClientList clients={clients}/>
 
         </div>
     )

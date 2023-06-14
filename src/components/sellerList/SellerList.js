@@ -5,7 +5,7 @@ const SellerList = (props) => {
   const [selectedSeller, setSelectedSeller] = useState(null);
 
 
-  const handleClientClick = (sellerId) => {
+  const handleSellerClick = (sellerId) => {
     const selectedClient = props.sellers.find((seller) => seller._id === sellerId);
     setSelectedSeller(selectedClient);
   };
@@ -21,7 +21,7 @@ const SellerList = (props) => {
              
               className={`${styles["seller-item"]} ${selectedSeller === seller._id ? styles["active"] : ''}`}
               
-              onClick={() => handleClientClick(seller._id)}
+              onClick={() => handleSellerClick(seller._id)}
             >
               {seller.name}
             </li>
