@@ -1,3 +1,5 @@
+import { ObjectId } from "mongodb";
+
 const { getMongoCollection } = require("../database/db.js")
 
 const collectionName = "seller"
@@ -21,7 +23,7 @@ async function getSellersData(req, res) {
 
         const id = req.query.id
         const collection = await getMongoCollection(collectionName)
-        const seller = await collection.findById({ _id: new ObjectId(id) }).exec();
+        const seller = await collection.findOne({ _id: new ObjectId(id) });
         return res.status(200).json(seller);
     } catch (error) {
         res.status(500).json({ error: error.message })
