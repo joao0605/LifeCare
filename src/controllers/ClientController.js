@@ -1,7 +1,7 @@
 const { getMongoCollection } = require("../database/db.js")
 
 const collectionName = "client"
-// Obtém todos os sellers
+// Obtém todos os clients
 async function getClients(req, res) {
     try {
         
