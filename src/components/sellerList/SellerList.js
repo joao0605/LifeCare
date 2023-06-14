@@ -5,6 +5,7 @@ const SellerList = (props) => {
   const [selectedSeller, setSelectedSeller] = useState(null);
 
   const [sales, setSales] = useState(0)
+  const [calls, setCalls] = useState(0)
 
  
   const handleSellerClick = (sellerId) => {
@@ -22,10 +23,26 @@ const SellerList = (props) => {
         setSales(sales.length);
       }
     }
+
+    async function fetchCalls() {
+
+      const res = await fetch(
+        `/api/adm/calls/${sellerId}`,
+        { method: "GET" }
+      );
+      if (res.status != 200) {
+        console.log("Vendas não disponíveis");
+      } else {
+        const calls = await res.json();
+        console.log("esse eh o de dados", calls);
+        setCalls(calls.length);
+      }
+    }
     const selectedClient = props.sellers.find((seller) => seller._id === sellerId);
     setSelectedSeller(selectedClient);
+    
+    fetchCalls()
     fetchSales()
-
     
   };
 
@@ -54,7 +71,8 @@ const SellerList = (props) => {
             <p>Name: {selectedSeller.name}</p>
             <p>Email: {selectedSeller.email}</p>
             <p>Phone: {selectedSeller.phoneNumber}</p>
-            <p>Sales: {sales}</p>
+            <p>Calls: {calls}</p>
+            <p>Sales concluded: {sales}</p>
           </div>
         ) : (
           <div>
