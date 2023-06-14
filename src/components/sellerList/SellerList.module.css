@@ -1,0 +1,41 @@
+.seller-container {
+    display: flex;
+    align-items: stretch;
+  }
+  
+  .seller-list {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .seller-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .seller-list li {
+      cursor: pointer;
+      padding: 5px;
+      border: 1px solid #000000;
+      margin-bottom: 10px;
+      width: 270px;
+      height: 57px;
+      
+    }
+    
+  
+    .seller-item:hover {
+      background-color: #f2f2f2;
+      /* outros estilos de hover desejados */
+    }
+  
+  
+  .seller-list li.active {
+    background-color: #f2f2f2;
+  }
+  
+  .seller-details {
+    flex: 2;
+    padding: 20px;
+    border-left: 1px solid #ccc;
+  }
