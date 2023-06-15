@@ -6,6 +6,15 @@
   .client-list {
     flex: 1;
     padding: 20px;
+    overflow-y: auto;
+    max-height: calc(100vh);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 200px;
+    max-width: 330px; 
+    
   }
   
   .client-list ul {

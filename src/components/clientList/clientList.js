@@ -38,15 +38,15 @@ const ClientList = (props) => {
 
   return (
    <div className={styles["client-container"]}>
-      <div className={styles["client-list"]}>
       <BiArrowBack onClick={handleVoltar}/>
+      <div className={styles["client-list"]}>
         <h2>Client List</h2>
         <ul>
           {props.clients && props.clients.map((client) => (
             <li
               key={client._id}
              
-              className={`${styles["client-item"]} ${selectedClient === client._id ? styles["active"] : ''}`}
+              className={`${styles["client-item"]} ${selectedClient === client ? styles["active"] : ''}`}
               
               onClick={() => handleClientClick(client._id)}
             >
