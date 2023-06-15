@@ -23,8 +23,8 @@ const SellerList = (props) => {
         console.log("Vendas não disponíveis");
       } else {
         const sales = await res.json();
-        console.log("esse eh o de dados", sales);
-        setSales(sales.length);
+        console.log("esse eh o de vendas", sales);
+        setSales(sales);
       }
     }
 
@@ -38,7 +38,7 @@ const SellerList = (props) => {
         console.log("Vendas não disponíveis");
       } else {
         const calls = await res.json();
-        console.log("esse eh o de dados", calls);
+        console.log("esse eh o de ligacoes", calls);
         setCalls(calls.length);
       }
     }
@@ -81,7 +81,25 @@ const SellerList = (props) => {
             <p>Email: {selectedSeller.email}</p>
             <p>Phone: {selectedSeller.phoneNumber}</p>
             <p>Calls: {calls}</p>
-            <p>Sales concluded: {sales}</p>
+            <p>Sales concluded: {sales.length}</p>
+            {sales.length !== 0 ?<p> Total sales: €{sales.map(sale => sale.healthPackage).reduce((acc, cur) => {
+              if(cur === 1){
+                console.log("1")
+                return acc += 25
+              }
+              if(cur === 2){
+                  console.log("2")
+                  return acc += 35
+              }
+              if(cur === 3){
+                console.log("3")
+                return acc += 45
+              }
+              if(cur === 4){
+                console.log("4")
+                return acc += 60
+              }
+            }, 0)},00 </p>  : ""}
           </div>
         ) : (
           <div>
