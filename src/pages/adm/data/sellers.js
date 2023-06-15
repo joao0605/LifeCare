@@ -34,7 +34,7 @@ export default function Sellers(){
  
     return (
         <div>
-           <TopBar/>
+       
            
     <SellerList sellers={sellers}/>
 

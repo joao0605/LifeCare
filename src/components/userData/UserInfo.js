@@ -1,10 +1,10 @@
-import styles from './TeacherInfo.module.css'
+import styles from './UserInfo.module.css'
 
-export default function TeacherInfo({name, birthday, phoneNumber, email, address}) {
+export default function UserInfo({name, birthday, phoneNumber, email, address}) {
 
     return (
         <div>
-            <h2 className={styles.title}><strong>Informações Professora</strong></h2>
+            <h2 className={styles.title}><strong>Informações Administrador</strong></h2>
             <p className={styles.stText}>Nome: {name}</p>
             <p lassName={styles.text}>Data de nascimento: {birthday}</p>
             <p lassName={styles.text}>Telefone/Whatsapp: {phoneNumber}</p>

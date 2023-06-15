@@ -1,15 +1,15 @@
- .studentAll{
+ .userAll{
     display: flex;
     flex-direction: column;
     align-items: end;
 } 
 
 
-.studentInfo, .responsibleInfo, .observacoesInfo{
+.escolaInfo, .professoraInfo, .observacoesInfo{
     transform: translate(-1.5%,0%);
 }
 
-.studentInfo {
+.escolaInfo {
     margin-top: 60px;
     padding-left: 10px;
     
@@ -26,7 +26,7 @@
 }
 
 
-.responsibleInfo {
+.dataInfo {
     margin-top: 20px;
     padding-left: 10px;
 
