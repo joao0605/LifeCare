@@ -1,11 +1,13 @@
 import List from "@/components/list/list"
-import styles from '../../components/list/list.module.css'
+
 import { useRouter } from "next/router"
 
 import { ItemForm } from "@/components/list/itens"
 import { useState, useEffect } from "react"
 import Navbar from "@/components/navbar/Navbar"
 import ClientList from "@/components/sellerList/SellerList"
+import Logo from "@/components/logoTitle/logoSecundario"
+import styles from '../../components/sellerList/SellerList.module.css'
 
 
 
@@ -65,6 +67,11 @@ export default function Home(){
       <div onClick={handleSellersPage}>Página dos sellers</div>
       <div onClick={handleClientsPage}>Página dos clients</div>
       <div onClick={handleProfile}>Perfil adm</div>
+
+      
+          
+     
+    
         </div>
     )
 }

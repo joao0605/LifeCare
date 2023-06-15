@@ -1,9 +1,11 @@
 .client-container {
     display: flex;
     align-items: stretch;
+    background-color: #ebebeb;
   }
   
   .client-list {
+    background-color: #175861;
     flex: 1;
     padding: 20px;
     overflow-y: auto;
@@ -23,24 +25,36 @@
   }
   
   .client-list li {
-      cursor: pointer;
-      padding: 5px;
-      border: 1px solid #000000;
-      margin-bottom: 10px;
-      width: 270px;
-      height: 57px;
+    cursor: pointer;
+    padding: 5px;
+    margin-bottom: 10px;
+    width: 270px;
+    height: 57px;
+    background-color: #f2f2f2;
+    
       
     }
+    .client-info-box {
+      
+      margin: 20px;
+      padding: 20px;
+      background-color: #ffff;
+      width: 500px;
+      height: 180px;
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+  }
     
   
     .client-item:hover {
-      background-color: #f2f2f2;
+      background-color: #2a9fae;
       /* outros estilos de hover desejados */
     }
   
   
   .client-list li.active {
-    background-color: #f2f2f2;
+    background-color: #2a9fae;
   }
   
   .client-details {

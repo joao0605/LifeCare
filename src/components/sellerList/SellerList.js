@@ -60,14 +60,12 @@ const SellerList = (props) => {
 
   return (
     <div className={styles["seller-container"]}>
-
       <div className={styles["seller-list"]}>
         <h2>Seller List</h2>
+        <div onClick={handleVoltar}>
+          <Logo />
+        </div>
         <ul>
-          <div onClick={handleVoltar}>
-
-            <Logo />
-          </div>
           {props.sellers && props.sellers.map((seller) => (
             <li
               key={seller._id}
@@ -88,7 +86,6 @@ const SellerList = (props) => {
             <h2>Seller Information</h2>
             <div className={styles["seller-info-box"]}>
               <div>
-
                 <Image src={'/worker.png'} width={110} height={110} />
               </div>
               <div className={styles.info}>
