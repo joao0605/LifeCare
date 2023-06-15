@@ -2,6 +2,7 @@
 import { useRouter } from "next/router"
 import { useState, useEffect } from "react"
 import SellerList from "@/components/sellerList/SellerList"
+import TopBar from "@/components/navButton/topBar"
 
 
 
@@ -33,7 +34,7 @@ export default function Sellers(){
  
     return (
         <div>
-           
+           <TopBar/>
            
     <SellerList sellers={sellers}/>
 

@@ -7,6 +7,6 @@ import styles from './input.module.css'
 export default function Input(props) {
     
     return(
-        <input className='bg-white/50 rounded-lg p-2'{...props}/>
+        <input className={styles.input}{...props}/>
     )
 }

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from "./SellerList.module.css";
 import { useRouter } from 'next/router';
 import {BiArrowBack}  from 'react-icons/bi';
+import Navbar from '../navbar/Navbar';
 
 const SellerList = (props) => {
   const [selectedSeller, setSelectedSeller] = useState(null);
@@ -56,6 +57,7 @@ const SellerList = (props) => {
 
   return (
    <div className={styles["seller-container"]}>
+    
       <div className={styles["seller-list"]}>
         <BiArrowBack onClick={handleVoltar}/>
         <h2>Seller List</h2>
@@ -82,7 +84,7 @@ const SellerList = (props) => {
             <p>Phone: {selectedSeller.phoneNumber}</p>
             <p>Calls: {calls}</p>
             <p>Sales concluded: {sales.length}</p>
-            {sales.length !== 0 ?<p> Total sales: €{sales.map(sale => sale.healthPackage).reduce((acc, cur) => {
+            {sales.length !== 0 ?<p> Total sales: €{sales && sales.map(sale => sale.healthPackage).reduce((acc, cur) => {
               if(cur === 1){
                 console.log("1")
                 return acc += 25

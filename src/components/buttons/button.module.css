@@ -2,25 +2,10 @@
     padding: 15px 30px;
     border: 0;
     background-color: #4fa8da;
-    border-radius: 10px;
+    border-radius: 6px;
     color: #ffff;
     font-weight: bold;
     font-size: bold;
     cursor: pointer;
-
-}
-
-.buttonSubmit {
-    padding: 15px 30px;
-    border: 0;
-    background-color: #4fa8da;
-    border-radius: 10px;
-    color: #ffff;
-    font-weight: bold;
-    font-size: bold;
-    cursor: pointer;
-
-    transform: translate(100%, 0%);
-    margin-top: 200px;
 
 }

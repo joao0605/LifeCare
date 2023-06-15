@@ -81,7 +81,7 @@ return (
 
 
 
-        <div className='h-[100vh] flex flex-col justify-around items-center' >
+        <div className={styles.container} >
 
             <Logo />
 

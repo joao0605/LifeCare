@@ -1,10 +1,13 @@
 .card {
     background-color: #ffff;
-    width: 350px;
+   
+    width: 280px;
     height: 300px;
     padding: 20px;
     border-radius: 10px;
 }
+
+/*bg-white/50 rounded-xl w-80 h-72 p-5*/
 
 .title {
     text-align: center;
