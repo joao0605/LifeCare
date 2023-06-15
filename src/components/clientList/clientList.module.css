@@ -18,6 +18,25 @@
     max-width: 330px; 
     
   }
+
+  .blue-box {
+    width: 30%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+  }
+  .blue-box::before {
+    background-color: blue;
+   content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 100%;
+  }
+
+ 
   
   .client-list ul {
     list-style-type: none;

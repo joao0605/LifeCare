@@ -66,7 +66,7 @@ const ClientList = (props) => {
                 {selectedClient ? (
                     <div>
                         <h2>Client Information</h2>
-                        <div className={styles["client-info-box"]}>
+                        <div className={styles["blue-box"]}>
 
                             <p>Name: {selectedClient.name}</p>
                             <p>Email: {selectedClient.email}</p>
