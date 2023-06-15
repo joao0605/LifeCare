@@ -6,57 +6,78 @@ import { ItemForm } from "@/components/list/itens"
 import { useState, useEffect } from "react"
 import Navbar from "@/components/navbar/Navbar"
 import ClientList from "@/components/sellerList/SellerList"
-import Logo from "@/components/logoTitle/logoSecundario"
+import Logo from "@/components/logoTitle/logoPrincipal"
 import styles from '../../components/sellerList/SellerList.module.css'
 import Homepage from "@/components/homepage/Homepage"
+import UserData from "@/components/userData/UserData";
+
 
 
 
 export default function Home() {
-  const [sellers, setSellers] = useState(null)
+  const [dados, setDados] = useState(null);
+
   const router = useRouter()
-
-
 
   useEffect(() => {
     const userType = localStorage.getItem('userType')
+   
+     if( userType !== "adm"){
 
-    if (userType !== "adm") {
-
-      router.push("/login")
+        router.push("/login")
     }
 
-  }, [])
+}, [])
 
   useEffect(() => {
-    async function fetchData() {
-
-      const res = await fetch(
-        `/api/adm/seller`,
-        { method: "GET" }
-      );
-      if (res.status != 200) {
-        console.log("Vendedores não disponíveis");
-      } else {
-        const data = await res.json();
-        console.log("esse eh o de dados", data);
-        setSellers(data);
+      async function fetchSession() {
+        try {
+          const res = await fetch('/api/auth/validate', {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ token: localStorage.getItem("token") })
+          });
+          if (!res.ok) {
+            throw new Error("Failed to validate session");
+          }
+          const data = await res.json();
+          return data.session.userId;
+        } catch (error) {
+          console.error(error);
+          // Lida com o erro, se necessário
+          return null;
+        }
       }
-    }
-
-    fetchData()
-  }, [])
-
-  const handleSellersPage = () => {
-    router.push("/adm/data/sellers")
-  }
-  const handleClientsPage = () => {
-    router.push("/adm/data/clients")
-  }
-  const handleProfile = () => {
-    router.push("/adm/data/profile")
-  }
-
+  
+      async function fetchData(userId) {
+        try {
+          const res = await fetch(`/api/adm/${userId}`, { method: "GET" });
+          if (!res.ok) {
+            throw new Error("Failed to fetch user data");
+          }
+          const data = await res.json();
+          setDados(data);
+        } catch (error) {
+          console.error(error);
+          // Lida com o erro, se necessário
+        }
+      }
+  
+      fetchSession()
+        .then(userId => {
+          if (userId) {
+            return fetchData(userId);
+          } else {
+            // Lida com o caso em que o userId não está disponível
+          }
+        })
+        .catch(error => {
+          console.error(error);
+          // Lida com o erro, se necessário
+        });
+    }, []);
 
 
 
@@ -65,14 +86,12 @@ export default function Home() {
     <div>
       <Navbar />
 
-      <p>Página inicial adm</p>
-      <div onClick={handleSellersPage}>Página dos sellers</div>
-      <div onClick={handleClientsPage}>Página dos clients</div>
-      <div onClick={handleProfile}>Perfil adm</div>
-
-
+  
       <Homepage />
+      <div>
+        {!dados ?<p>Ainda sem dados para carregar por aqui!</p> : <UserData name={dados.name} birthdate={dados.birthdate} phoneNumber={dados.phoneNumber} email={dados.email} address={dados.address}/>}
 
+        </div>
 
     </div>
   )

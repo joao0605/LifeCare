@@ -3,7 +3,8 @@ import styles from "./clientList.module.css";
 import { BiArrowBack } from 'react-icons/bi';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import Logo from '../logoTitle/logoSecundario';
+import Logo from '../logoTitle/logoPrincipal';
+import Navbar from '../navbar/Navbar';
 
 const ClientList = (props) => {
     const [selectedClient, setSelectedClient] = useState(null);
@@ -39,13 +40,14 @@ const ClientList = (props) => {
     }
 
     return (
+        <div>
+            <Navbar/>
+        
         <div className={styles["client-container"]}>
             <div className={styles["client-list"]}>
-                <BiArrowBack onClick={handleVoltar} />
+             
                 <h2>Client List</h2>
-                <div>
-                <Logo/>
-              </div>
+               
                 <ul>
                     {props.clients && props.clients.map((client) => (
                         <li
@@ -84,7 +86,9 @@ const ClientList = (props) => {
                 )}
             </div>
         </div>
+        </div>
     );
+    
 };
 
 export default ClientList;

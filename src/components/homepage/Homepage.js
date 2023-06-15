@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import Logo from "../logoTitle/logoSecundario";
+import Logo from "../logoTitle/logoPrincipal";
 import styles from './Homepage.module.css'
 
 export default function Homepage() {

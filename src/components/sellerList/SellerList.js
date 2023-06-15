@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { BiArrowBack } from 'react-icons/bi';
 import Navbar from '../navbar/Navbar';
 import Image from 'next/image';
-import Logo from '../logoTitle/logoSecundario';
+import Logo from '../logoTitle/logoPrincipal';
 
 
 const SellerList = (props) => {
@@ -59,12 +59,16 @@ const SellerList = (props) => {
   }
 
   return (
+    <div>
+
+
+<Navbar/>
+    
     <div className={styles["seller-container"]}>
+    
       <div className={styles["seller-list"]}>
         <h2>Seller List</h2>
-        <div onClick={handleVoltar}>
-          <Logo />
-        </div>
+        
         <ul>
           {props.sellers && props.sellers.map((seller) => (
             <li
@@ -127,6 +131,8 @@ const SellerList = (props) => {
           </div>
         )}
       </div>
+    </div>
+
     </div>
   );
 };

@@ -7,7 +7,7 @@ import React from 'react';
 
 
 
-import Logo from '../components/logoTitle/logoSecundario'
+import Logo from '../components/logoTitle/logoPrincipal'
 import LoginCard from "@/components/loginCard/loginCard"
 import Input from '@/components/input/input'
 import Button from '@/components/buttons/button'
