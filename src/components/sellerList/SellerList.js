@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { BiArrowBack } from 'react-icons/bi';
 import Navbar from '../navbar/Navbar';
 import Image from 'next/image';
+import Logo from '../logoTitle/logoSecundario';
 
 
 const SellerList = (props) => {
@@ -60,10 +61,13 @@ const SellerList = (props) => {
   return (
     <div className={styles["seller-container"]}>
 
-      <BiArrowBack onClick={handleVoltar} />
       <div className={styles["seller-list"]}>
         <h2>Seller List</h2>
         <ul>
+          <div onClick={handleVoltar}>
+
+            <Logo />
+          </div>
           {props.sellers && props.sellers.map((seller) => (
             <li
               key={seller._id}

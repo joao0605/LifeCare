@@ -1,9 +1,11 @@
 .seller-container {
     display: flex;
     align-items: stretch;
+    background-color: #ebebeb;
   }
   
   .seller-list {
+    background-color: #175861;
     flex: 1;
     padding: 20px;
     overflow-y: auto;
@@ -14,13 +16,14 @@
     align-items: center;
     width: 200px;
     max-width: 330px; 
+    
   }
 
   .seller-info-box {
     border: 1px solid #ccc;
     margin: 20px;
     padding: 20px;
-    background-color: #f2f2f2;
+    background-color: #ffff;
     width: 500px;
     height: 180px;
     display: flex;
@@ -35,22 +38,22 @@
   .seller-list li {
       cursor: pointer;
       padding: 5px;
-      border: 1px solid #000000;
       margin-bottom: 10px;
       width: 270px;
       height: 57px;
+      background-color: #f2f2f2;
       
     }
     
   
     .seller-item:hover {
-      background-color: #f2f2f2;
+      background-color: #2a9fae;
       /* outros estilos de hover desejados */
     }
   
   
   .seller-list li.active {
-    background-color: #f2f2f2;
+    background-color: #2a9fae;
   }
   
   .seller-details {
@@ -61,7 +64,7 @@
 
   .graph{
     margin: 20px;
-    background-color: #ccc;
+    background-color: #ffff;
     min-height: 50vh;
     max-width: 50vh;
     min-width: 50vw;
