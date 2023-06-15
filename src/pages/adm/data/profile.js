@@ -1,9 +1,22 @@
 import UserData from "@/components/userData/UserData";
+import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 
 export default function Profile(){
 
     const [dados, setDados] = useState(null);
+
+    const router = useRouter()
+
+    useEffect(() => {
+      const userType = localStorage.getItem('userType')
+     
+       if( userType !== "adm"){
+
+          router.push("/login")
+      }
+
+  }, [])
 
     useEffect(() => {
         async function fetchSession() {

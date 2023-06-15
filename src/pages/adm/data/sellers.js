@@ -9,6 +9,18 @@ import TopBar from "@/components/navButton/topBar"
 export default function Sellers(){
     const [sellers, setSellers] = useState(null)
 
+    const router = useRouter()
+
+    useEffect(() => {
+      const userType = localStorage.getItem('userType')
+     
+       if( userType !== "adm"){
+
+          router.push("/login")
+      }
+
+  }, [])
+
     useEffect(() => {
       async function fetchData() {
   

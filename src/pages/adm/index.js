@@ -13,6 +13,18 @@ export default function Home(){
     const [sellers, setSellers] = useState(null)
     const router = useRouter()
 
+  
+
+    useEffect(() => {
+      const userType = localStorage.getItem('userType')
+     
+       if( userType !== "adm"){
+
+          router.push("/login")
+      }
+
+  }, [])
+
     useEffect(() => {
       async function fetchData() {
   

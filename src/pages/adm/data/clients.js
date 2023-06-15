@@ -7,6 +7,17 @@ import ClientList from "@/components/clientList/clientList"
 
 export default function Clients(){
     const [clients, setClients] = useState(null)
+    const router = useRouter()
+
+    useEffect(() => {
+      const userType = localStorage.getItem('userType')
+     
+       if( userType !== "adm"){
+
+          router.push("/login")
+      }
+
+  }, [])
 
     useEffect(() => {
       async function fetchData() {
