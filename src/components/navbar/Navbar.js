@@ -6,7 +6,11 @@ import LogoPequeno from "../logoTitle/logoPequeno";
 
 
 export default function Navbar() {
-    
+
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        localStorage.removeItem("userType");
+    }
     return (
         <div style={{backgroundColor:'rgba(23,88,97)'}}>
             <div className={styles.navbar}>
@@ -21,6 +25,9 @@ export default function Navbar() {
                 </Link>
                 <Link href={'/adm/data/clients'} >
                     <span className={styles.text}>Clients</span>
+                </Link>
+                <Link href={'/login'} >
+                    <span onClick={handleLogout} className={styles.text}>Logout</span>
                 </Link>
 
                 </div>
