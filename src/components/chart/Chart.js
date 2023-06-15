@@ -6,9 +6,9 @@ Chart.register(...registerables);
 
 
 
-const ChartComponent = () => {
+function Grafico(props) {
   const xValues = ["Calls", "Sales"];
-  const yValues = [15, 3];
+  const yValues = props.values;
   const barColors = ["yellow", "green"];
 
   const chartData = {
@@ -27,15 +27,15 @@ const ChartComponent = () => {
     },
     title: {
       display: true,
-      text: "Gráfico"
+      text: "Chart"
     }
   };
 
   return (
-    <div>
+    <div style={{width: "100%", height: "100%"}}>
       <Bar data={chartData} options={chartOptions} />
     </div>
   );
 };
 
-export default ChartComponent;
+export default Grafico;

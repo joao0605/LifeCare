@@ -5,13 +5,14 @@ import { BiArrowBack } from 'react-icons/bi';
 import Navbar from '../navbar/Navbar';
 import Image from 'next/image';
 import Logo from '../logoTitle/logoPrincipal';
+import Grafico from '../chart/Chart';
 
 
 const SellerList = (props) => {
   const [selectedSeller, setSelectedSeller] = useState(null);
 
-  const [sales, setSales] = useState(0)
-  const [calls, setCalls] = useState(0)
+  const [sales, setSales] = useState([])
+  const [calls, setCalls] = useState([])
 
   const router = useRouter()
 
@@ -43,7 +44,7 @@ const SellerList = (props) => {
       } else {
         const calls = await res.json();
         console.log("esse eh o de ligacoes", calls);
-        setCalls(calls.length);
+        setCalls(calls);
       }
     }
     const selectedClient = props.sellers.find((seller) => seller._id === sellerId);
@@ -97,7 +98,7 @@ const SellerList = (props) => {
                 <p>Name: {selectedSeller.name}</p>
                 <p>Email: {selectedSeller.email}</p>
                 <p>Phone: {selectedSeller.phoneNumber}</p>
-                <p>Calls: {calls}</p>
+                <p>Calls: {calls.length}</p>
                 <p>Sales concluded: {sales.length}</p>
                 {sales.length !== 0 ? <p> Total sales: €{sales && sales.map(sale => sale.healthPackage).reduce((acc, cur) => {
                   if (cur === 1) {
@@ -120,7 +121,7 @@ const SellerList = (props) => {
               </div>
             </div>
             <div className={styles["graph"]}>
-              Gráfico aqui
+             <Grafico values={[calls.length, sales.length]}/>
 
             </div>
           </div>
